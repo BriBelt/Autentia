@@ -2,7 +2,7 @@
 #define GAME_HPP
 
 #include <map>
-#include "includes/player_hpp/player.hpp"  // Include the header file for the Player class
+#include "../../includes/Player_hpp/Player.hpp"  // Include the header file for the Player class
 
 class Game {
 public:
