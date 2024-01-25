@@ -1,16 +1,15 @@
-#include "../../includes/Player_hpp/Player.hpp"
+#include "includes/Player.hpp"
 
 Player::Player(const std::string name, int playerNum)
 {
 	this->name = name;
 	this->playerNum = playerNum;
-	this->multiplier = 0;
-	std::vector<int> firstShots(10);
-	std::vector<int> secondShots(10);
-	fill(firstShots.begin(), firstShots.end(), 0);
-	fill(secondShots.begin(), secondShots.end(), 0);
+	std::vector<int> firstShots(0);
+	std::vector<int> secondShots(0);
+	iota(firstShots.begin(), firstShots.end(), 1);
+	iota(secondShots.begin(), secondShots.end(), 1);
  	for (int i = 0; i < 10; i++) {
-		std::cout << firstShots[i] << " ";
+        cout << firstShots[i] << " ";
     }
 }
 
@@ -23,14 +22,9 @@ std::string	Player::getName(void) const
 	return (this->name);
 }
 
-int	Player::getFirstShots(int roundNum) const
+int	Player::getScore(int roundNum) const
 {
-	return (this->firstShots[roundNum]);
-}
-
-int	Player::getSecondShots(int roundNum) const
-{
-	return (this->secondShots[roundNum]);
+	return (this->scores[roundNum]);
 }
 
 int	Player::getPlayerNum(void) const
@@ -38,12 +32,7 @@ int	Player::getPlayerNum(void) const
 	return (this->playerNum);
 }
 
-int	Player::getMultiplier(void) const
+void	Player::setScore(int roundNum, int score)
 {
-	return (this->multiplier);
-}
-
-void	Player::setMultiplier(int value)
-{
-	this->multiplier = value;
+	this->scores[roundNum] += score;
 }
