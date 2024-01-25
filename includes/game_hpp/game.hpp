@@ -14,9 +14,19 @@ public:
     void nextFrame();
     void playTurn();
 
+    // Getters
+    std::string getName() const { return gameName; }
+    int getCurrentFrame() const { return currentFrame; }
+
+    // Setters
+    void setName(const std::string& name) { gameName = name; }
+    void setCurrentFrame(int frame) { currentFrame = frame; }
+
 private:
     std::string gameName;
+
     std::map<std::string, Player> playersMap;  // Map to store players by name
+    
     int currentFrame;
     // Add any other game-related data as needed
 };
