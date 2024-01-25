@@ -1,6 +1,4 @@
-#include <ctype.h>
-#include <iostream>
-#include <string>
+#include "checker.hpp"
 
 //Function checks number of players must be less or equal than 4
 bool    check_num_players(int   num_players)
