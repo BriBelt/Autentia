@@ -4,6 +4,7 @@ Player::Player(const std::string name, int playerNum)
 {
 	this->name = name;
 	this->playerNum = playerNum;
+	this->multiplier = 0;
 	std::vector<int> firstShots(10);
 	std::vector<int> secondShots(10);
 	fill(firstShots.begin(), firstShots.end(), 0);
@@ -35,4 +36,14 @@ int	Player::getSecondShots(int roundNum) const
 int	Player::getPlayerNum(void) const
 {
 	return (this->playerNum);
+}
+
+int	Player::getMultiplier(void) const
+{
+	return (this->multiplier);
+}
+
+void	Player::setMultiplier(int value)
+{
+	this->multiplier = value;
 }

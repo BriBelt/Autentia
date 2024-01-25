@@ -12,6 +12,7 @@ class Player
 			std::vector<int>	firstShots; 
 			std::vector<int>	secondShots; 
 			int	playerNum;
+			int	multiplier;
 	public:
 			Player(const std::string name, int playerNum);
 			~Player();
@@ -19,6 +20,8 @@ class Player
 			int	getFirstShots(int roundNum) const;
 			int	getSecondShots(int roundNum) const;
 			int	getPlayerNum(void) const;
+			int	getMultiplier(void) const;
+			void	setMultiplier(int value);
 };
 
 #endif

@@ -5,7 +5,6 @@ int main() {
     std::string str;
 
     std::cout << "Welcome to Bowling!" << std::endl;
-
     // Step 1: Enter the number of players
     int numPlayers;
     do {
