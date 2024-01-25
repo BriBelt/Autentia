@@ -1,9 +1,10 @@
 #include <iostream>
+#include "includes/checkers_hpp/checker.hpp"
 #include "includes/game_hpp/game.hpp"  // Include the header file for the Game class
 
 int main() {
     std::string str;
-
+    ParseInput pi;
     std::cout << "Welcome to Bowling!" << std::endl;
 
     // Step 1: Enter the number of players
@@ -18,10 +19,18 @@ int main() {
     Game game("Bowling", numPlayers);
 
     for (int i = 1; i <= numPlayers; ++i) {
-        std::cout << "Enter the name for Player " << i << ": ";
-        std::cin >> str;
-        Player player(str, i);
-        game.addPlayer(player);
+
+        while (true)
+        {
+            std::cout << "Enter the name for Player (MAX 10 characters)" << i << ": ";
+            std::cin >> str;
+            if (pi.check_name_players(str)) //!!!!!!!!!!!!!!!!!!!!falla cuando hay espacio
+            {
+                Player player(str, i);
+                game.addPlayer(player);
+                break;
+            }
+        }
     }
 
     // Step 3: Start the game
@@ -35,12 +44,12 @@ int main() {
 		// ui.displayScores(Player);
         game.nextFrame();  // Advance to the next frame10
 
-        // Check if the game is over (for simplicity, you might want to implement a proper end condition)
-        if (game.getCurrentFrame() >= 10) {
+
+        if (game.getCurrentFrame() > 10) {
             std::cout << "Game over!" << std::endl;
 			//ui.finalScores();
             break;
-        }
+        }        // Check if the game is over (for simplicity, you might want to implement a proper end condition)
     }
 
     return (0);

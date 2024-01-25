@@ -1,4 +1,4 @@
-#include "checker.hpp"
+#include "../../includes/checkers_hpp/checker.hpp"
 
 //Function checks number of players must be less or equal than 4
 bool ParseInput::check_num_players(std::string num_players_str)
@@ -25,9 +25,8 @@ bool ParseInput::check_name_players(std::string &name)
 		return (false);
 	for (size_t i = 0; i < name.size(); i++)
 	{
-		if (!isprint(name[i]))
+		if (!isprint(name[i]) || name[i] == ' ')
 			return (false);
-		i++;
 	}
 	return (true);
 }
