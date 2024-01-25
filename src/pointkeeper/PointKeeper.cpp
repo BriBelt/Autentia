@@ -29,7 +29,6 @@ int PointKeeper::calc_punt(Player play, int round, int thr1, int thr2)
 		sumpunt(play, round-1, punt);
 		sumpunt(play, round-2, punt);
 		multiplier-=2;
-
 	}
 	if (thr1==10)
 		multiplier += 2;
