@@ -1,5 +1,5 @@
 // Player.cpp
-#include "../../includes/player_hpp/player.hpp"
+#include "../../includes/Player_hpp/player.hpp"
 
 Player::Player(const std::string& name, int playerNum) : name(name), playerNum(playerNum) {
     scores.resize(10, 0);  // Initialize the vector with 10 rounds, all scores set to 0

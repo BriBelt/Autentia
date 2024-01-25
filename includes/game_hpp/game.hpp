@@ -2,7 +2,7 @@
 #define GAME_HPP
 
 #include <map>
-#include "../../includes/player_hpp/player.hpp"
+#include "../../includes/Player_hpp/player.hpp"
 
 class Game {
 public:
