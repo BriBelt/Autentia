@@ -4,40 +4,35 @@ PointKeeper::PointKeeper()
 {
 	multiplier=0;
 }
-
-int PointKeeper::calc_punt(Player play, int round, int stand, int thrown)
+int PointKeeper::calc_punt(Player play, int round, int thr1, int thr2)
 {
-	if (round < 10)
+	int punt = thr1 + thr2;
+
+	if (round < 9)
+		sumpunt(play, round, punt);
+	if (multiplier==1)
 	{
-		sumpunt(play, round, thrown);
-	}
-	if (multiplier>0)
-	{
-		for (int i=multiplier; i>0; i--)
-		{
-			if (round - i >= 0)
-				sumpunt(play, round - i, thrown);
-		}
+		sumpunt(play, round-1, thr1);
 		multiplier--;
 	}
-	if (stand == 10 && thrown == 10)
-		multiplier += 2;
-	if (thrown == stand)
-		multiplier++;
-}
-
-void PointKeeper::sumpunt(Player play, int round, int punt)
-{
-	play.scores[round] += punt;
-}
-
-int PointKeeper::total_points(Player play, int round)
-{
-	int total;
-
-	for (int i=round; i>=0; i--)
-	{
-		total += play.scores[i];
+	if (multiplier==2)
+	{	
+		if ( thr1 != 10)
+			multiplier--;
+		sumpunt(play, round-1, punt);
+		multiplier--;
 	}
-	return total;
+	if (multiplier>2)
+	{
+		if ( thr1 != 10)
+			multiplier--;
+		sumpunt(play, round-1, punt);
+		sumpunt(play, round-2, punt);
+		multiplier-=2;
+
+	}
+	if (thr1==10)
+		multiplier += 2;
+	else if (thr1 + thr2 == 10)
+		multiplier++;	
 }
