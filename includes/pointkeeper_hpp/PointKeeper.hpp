@@ -1,16 +1,13 @@
 #ifndef PointKeeper_HPP
 # define PointKeeper_HPP
 # include <iostream>
-# include "player.hpp"
+# include "../../includes/player_hpp/player.hpp"
 
 class PointKeeper{
 	public:
 		PointKeeper();
-		int calc_punt(Player play, int round, int stand, int thrown);
+		void calc_punt(Player play, int round, int thr1, int thr2);
 		void sumpunt(Player play, int round, int punt);
-		int total_points(Player play, int round);
-	private:	
-		int multiplier;
 };
 
 

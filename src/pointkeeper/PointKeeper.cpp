@@ -1,37 +1,43 @@
-#include "PointKeeper.hpp"
+#include "../../includes/pointkeeper_hpp/PointKeeper.hpp"
 
 PointKeeper::PointKeeper()
 {
-	multiplier=0;
+
 }
-int PointKeeper::calc_punt(Player play, int round, int thr1, int thr2)
+void PointKeeper::calc_punt(Player play, int round, int thr1, int thr2)
 {
 	int punt = thr1 + thr2;
+	int mult = play.getMultiplier();
 
 	if (round < 9)
 		sumpunt(play, round, punt);
-	if (multiplier==1)
+	if (mult==1)
 	{
 		sumpunt(play, round-1, thr1);
-		multiplier--;
+		play.setMultiplier(0);
 	}
-	if (multiplier==2)
+	if (mult==2)
 	{	
 		if ( thr1 != 10)
-			multiplier--;
+			play.setMultiplier(1);
 		sumpunt(play, round-1, punt);
-		multiplier--;
+		play.setMultiplier(0);
 	}
-	if (multiplier>2)
+	if (mult>2)
 	{
 		if ( thr1 != 10)
-			multiplier--;
+			play.setMultiplier(mult--);
 		sumpunt(play, round-1, punt);
 		sumpunt(play, round-2, punt);
-		multiplier-=2;
+		play.setMultiplier(mult-2);
 	}
 	if (thr1==10)
-		multiplier += 2;
+		play.setMultiplier(mult+2);
 	else if (thr1 + thr2 == 10)
-		multiplier++;	
+		play.setMultiplier(mult+1);
+}
+
+void PointKeeper::sumpunt(Player play, int round, int punt)
+{
+	play.setScore(round, play.getScore(round) + punt);
 }
