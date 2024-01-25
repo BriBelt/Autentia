@@ -2,6 +2,8 @@
 #define PRINTING_HPP
 
 #include "../include_1.hpp"
+#include "../player_hpp/player.hpp"
+#include "../game_hpp/game.hpp"
 
 class Printing{
 	private:
@@ -9,7 +11,7 @@ class Printing{
 		//printScores(Game game);
 		Printing(void);
 		~Printing();
-		static void	printScores(void);
+		static void	printScores(int round, std::map<std::string, Player> player);
 };
 
 
