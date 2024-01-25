@@ -24,12 +24,9 @@ public:
 
 private:
     std::string gameName;
-    int numPlayers;
-
+    unsigned long numPlayers;
     std::map<std::string, Player> playersMap;  // Map to store players by name
     
     int currentFrame;
     // Add any other game-related data as needed
 };
-
-#endif // GAME_HPP
