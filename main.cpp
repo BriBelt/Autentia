@@ -26,18 +26,22 @@ int main() {
 
     // Step 3: Start the game
     game.startGame();
+	game.setCurrentFrame(1);
 
     // Step 4: Play turns until the game is over
-    while (true) {
+    while (game.getCurrentFrame() <= 10) {
+		// Clean Terminal
         game.playTurn();
-        game.nextFrame();  // Advance to the next frame
+		// ui.displayScores(Player);
+        game.nextFrame();  // Advance to the next frame10
 
         // Check if the game is over (for simplicity, you might want to implement a proper end condition)
-        if (game.getCurrentFrame() > 10) {
+        if (game.getCurrentFrame() >= 10) {
             std::cout << "Game over!" << std::endl;
+			//ui.finalScores();
             break;
         }
     }
 
-    return 0;
+    return (0);
 }

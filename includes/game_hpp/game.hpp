@@ -2,7 +2,7 @@
 #define GAME_HPP
 
 #include <map>
-#include "includes/player_hpp/player.hpp"  // Include the header file for the Player class
+#include "../../includes/player_hpp/player.hpp"
 
 class Game {
 public:
@@ -24,8 +24,7 @@ public:
 
 private:
     std::string gameName;
-    int numPlayers;
-
+    unsigned long numPlayers;
     std::map<std::string, Player> playersMap;  // Map to store players by name
     
     int currentFrame;
