@@ -2,7 +2,7 @@
 #define BOWLING_HPP
 
 #include <iostream>
-#include <iostream>
+#include <iomanip>
 
 /*class Player;->nombre como máximo de 10 caracteres
 class Game; ->nombre del juego, mapa de los jugadores

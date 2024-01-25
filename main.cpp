@@ -1,4 +1,5 @@
 #include "includes/include_1.hpp"
+#include "includes/UI_hpp/ui.hpp"
 
 int main()
 {
@@ -10,6 +11,7 @@ int main()
 	if (std::atoi(str.c_str()) < 1 || std::atoi(str.c_str()) > 4)
 		return 0;
 	std::cout << str << std::endl;
+	Printing::printScores();
 
 	return 0;
 }

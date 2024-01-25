@@ -1,6 +1,7 @@
 NAME = bowling
 
 SRC =	main.cpp \
+		src/UI/ui.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
