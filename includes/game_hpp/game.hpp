@@ -1,13 +1,24 @@
-#pragma once
+#ifndef GAME_HPP
+#define GAME_HPP
+
 #include <vector>
-#include "player.hpp"
+#include "includes/player_hpp/player.hpp"
 
 class Game {
 public:
-    Game();
-    // Add methods for managing the game state
+    Game(const std::string& gameName);
+    ~Game();
+
+    void addPlayer(const std::string& playerName);
+    void startGame();
+    void nextFrame();
+    void playTurn();
+
 private:
+    std::string gameName;
     std::vector<Player> players;
     int currentFrame;
-    // Add other game-related data as needed
+    // Add any other game-related data as needed
 };
+
+#endif // GAME_HPP
