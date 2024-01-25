@@ -1,6 +1,7 @@
 NAME = bowling
 
 SRC =	main.cpp \
+		src/player/Player.cpp
 
 OBJS = $(SRC:.cpp=.o)
 

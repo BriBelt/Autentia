@@ -7,7 +7,8 @@ class Player
 {
 	private:
 			std::string	name;
-			int	scores[10];
+			std::vector<int>	firstShots; 
+			std::vector<int>	secondShots; 
 			int	playerNum;
 	public:
 			Player(const std::string name, int playerNum);
