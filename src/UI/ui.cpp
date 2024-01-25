@@ -50,9 +50,6 @@ void	Printing::printScores(int round, std::map<std::string, Player> player)
 			setPlayerName(it->first);
 			setPlayerScore(round, it->second);
 			std::cout << std::endl;
-			/*std::cout << std::setw(1);
-			std::cout << i;
-			std::cout << "|";*/
 			std::cout << " _________________________________________________________________________ " << std::endl;
 			i++;
 		}
