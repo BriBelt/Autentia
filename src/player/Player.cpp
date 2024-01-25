@@ -1,7 +1,9 @@
 #include "Player.hpp"
 
-Player::Player(std::string name) name(name)
+Player::Player(const std::string name, int playerNum)
 {
+	this->name = name;
+	this->playerNum = playerNum;
 	for (int i = 0; i < 10; i++)
 		this->scores[i] = 0;
 }
@@ -18,6 +20,11 @@ std::string	Player::getName(void) const
 int	Player::getScore(int roundNum) const
 {
 	return (this->scores[roundNum]);
+}
+
+int	Player::getPlayerNum(void) const
+{
+	return (this->playerNum);
 }
 
 void	Player::setScore(int roundNum, int score)

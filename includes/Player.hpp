@@ -8,11 +8,13 @@ class Player
 	private:
 			std::string	name;
 			int	scores[10];
+			int	playerNum;
 	public:
-			Player(std::string name);
+			Player(const std::string name, int playerNum);
 			~Player();
 			std::string	getName(void) const;
 			int	getScore(int roundNum) const;
+			int	getPlayerNum(void) const;
 			void	setScore(int roundNum, int score);
 };
 
