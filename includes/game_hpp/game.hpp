@@ -2,11 +2,11 @@
 #define GAME_HPP
 
 #include <map>
-#include "Player.hpp"  // Include the header file for the Player class
+#include "includes/player_hpp/player.hpp"  // Include the header file for the Player class
 
 class Game {
 public:
-    Game(const std::string& gameName);
+    Game(const std::string& gameName, int numPlayers);
     ~Game();
 
     void addPlayer(const Player& player);
@@ -24,6 +24,7 @@ public:
 
 private:
     std::string gameName;
+    int numPlayers;
 
     std::map<std::string, Player> playersMap;  // Map to store players by name
     

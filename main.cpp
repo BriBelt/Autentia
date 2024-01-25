@@ -4,8 +4,6 @@
 int main() {
     std::string str;
 
-    Checker checker;
-
     std::cout << "Welcome to Bowling!" << std::endl;
 
     // Step 1: Enter the number of players
@@ -22,8 +20,7 @@ int main() {
     for (int i = 1; i <= numPlayers; ++i) {
         std::cout << "Enter the name for Player " << i << ": ";
         std::cin >> str;
-        checker.checkname(str);
-        Player player(str);
+        Player player(str, i);
         game.addPlayer(player);
     }
 
