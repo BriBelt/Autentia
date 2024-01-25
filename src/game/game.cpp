@@ -6,7 +6,8 @@ Game::Game(const std::string& name, int numPlayers) : gameName(name), numPlayers
 }
 
 Game::~Game() {
-    // Cleanup code, if any
+    // Clear map
+    playersMap.clear();
 }
 
 void Game::addPlayer(const Player& player) {

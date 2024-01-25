@@ -1,5 +1,12 @@
 #include <iostream>
+#include <cstdlib> 
 #include "includes/game_hpp/game.hpp"  // Include the header file for the Game class
+
+#ifdef _WIN32
+    const char* CLEAR_COMMAND = "cls";
+#else
+    const char* CLEAR_COMMAND = "clear";
+#endif
 
 int main() {
     std::string str;
@@ -30,7 +37,7 @@ int main() {
 
     // Step 4: Play turns until the game is over
     while (game.getCurrentFrame() <= 10) {
-		// Clean Terminal
+		system(CLEAR_COMMAND);
         game.playTurn();
 		// ui.displayScores(Player);
         game.nextFrame();  // Advance to the next frame10
@@ -42,6 +49,5 @@ int main() {
             break;
         }
     }
-
     return (0);
 }
