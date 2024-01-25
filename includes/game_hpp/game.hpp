@@ -30,5 +30,3 @@ private:
     int currentFrame;
     // Add any other game-related data as needed
 };
-
-#endif // GAME_HPP
